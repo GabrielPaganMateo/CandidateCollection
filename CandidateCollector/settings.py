@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-3tf+gl)4od=))jxr=s!93lw)kv$if)*b6wo3m4x%%pp-r6d@$g'
+SECRET_KEY = 'django-insecure-g(#_+23!q*bf2%gg(d04waaovkfg5&_09^i_*m_^5^wrstawbv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['CandidateCollector-env.us-east-2.elasticbeanstalk.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Resume_Collect'
+    'Resume_Collect',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -74,29 +75,36 @@ WSGI_APPLICATION = 'CandidateCollector.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+DATABASES = {
+            'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'resumevault',
+        'USER': 'holberton',
+        'PASSWORD': 'password',
+        'HOST': 'database-1.ckr9gkvmq8f1.us-east-2.rds.amazonaws.com',
+        'PORT': '5432',
+        }
+    }
 
-if 'RDS_DB_NAME' in os.environ:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': os.environ['RDS_DB_NAME'],
-            'USER': os.environ['RDS_USERNAME'],
-            'PASSWORD': os.environ['RDS_PASSWORD'],
-            'HOST': os.environ['RDS_HOSTNAME'],
-            'PORT': os.environ['RDS_PORT'],
-        }
+
+
+""" local psql database{
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'collection',
+        'USER': 'Gabriel',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'collection',
-            'USER': 'Gabriel',
-            'PASSWORD': 'password',
-            'HOST': 'localhost',
-            'PORT': '5432',
-        }
-    }
+}"""
+"""AWS DB Master username: holberton, password: password, Databasename: resumevault"""
+
+""" Old Database
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }"""
 
 
 # Password validation
@@ -123,7 +131,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Puerto_Rico'
 
 USE_I18N = True
 
@@ -135,7 +143,31 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+MEDIA_URL = '/media/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
+MEDIA_ROOT = os.path.join(BASE_DIR)
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#S3 Buckets Config
+from dotenv import load_dotenv
+
+load_dotenv()
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+
+AWS_S3_REGION_NAME = 'us-east-2'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+"""Uncomment for static file storage in S3, (Remember to add every static directory to S3, css and images, then erase them from app)"""
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
