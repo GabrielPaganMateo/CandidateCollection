@@ -1,0 +1,48 @@
+nonespace {
+    display: block;
+    height: 3.5vh;
+    width: 100%;
+}
+space {
+    display: flex;
+    height: 3.5vh;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(90deg, rgba(255,235,59,1) 0%, rgba(255,193,7,1) 35%, rgba(255,152,0,1) 100%);
+    color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    padding: 20px 0;
+    margin-bottom: 25px;
+    animation: pop-in 0.6s ease-out forwards;
+    font-family: 'DM Sans', sans-serif;
+    text-shadow: 1px 1px 1px black, 0 0 1px black, 0 0 1px darkblue;
+    z-index: 5;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Text pop-in animation */
+@keyframes pop-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-3em);
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(1em);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+space div {
+    display: block;
+    line-height: 0;
+    font-size: max(5vh, 24px);
+}
+
+#emptySpace {
+
+}
+

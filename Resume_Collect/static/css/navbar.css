@@ -1,0 +1,100 @@
+
+header {
+    height: 18vh;
+}
+#logo {
+    height: 10vh;
+    width: 25vh;
+    min-height: 100px;
+    min-width: 250px;
+    border-radius: 5%;
+}
+
+div.navbar {
+    border-radius: 8%;
+    margin-left: 0;
+    max-width: 100%;
+}
+
+.navbar {
+    position: fixed;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    z-index: 5;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+
+a.navbar-brand {
+    margin-right: 0;
+}
+
+.navbar-custom {
+    background: linear-gradient(270deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, #38b6ff 75%);
+    height: 12vh;
+    min-height: 150px;
+}
+
+.navbar-custom .btn-outline-success {
+    color: #FFF;
+    border-color: #ffde59;
+    border-width: 3px;;
+    height: 5vh;
+    width: 12.5vh;
+    min-width: 105px;
+    min-height: 50px;
+    font-size: max(2vh, 21px);
+    
+}
+/* Another comment */
+
+.navbar-custom .btn-outline-success:hover {
+    background-color: #ffde59;
+    border-color: #FFF;
+}
+
+#log:active {
+    color: #fff;
+    background-color: #ffde59;
+    border-color: #fff;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.form-inline {
+    height: min-content;
+    width: min-content;
+}
+
+#logdiv {
+    display: flex;
+    height: 10vh;
+    width: 25vh;
+    min-height: 100px;
+    min-width: 250px;
+    border-radius: 5%;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+#username {
+    color: #fff;
+
+    margin-right: 50px;
+    margin-left: 50px;
+    font-size: max(3vh, 28px);
+    font-family: 'DM Sans', sans-serif;
+}
+
+
+/*<!--rgb(254, 255, 134) yellow
+rgb(176, 218, 255) sky blue
+rgb(25, 167, 206) aqua blue
+rgb(20, 108, 148) navy blue-->*/
+
+/* Folder CSS */

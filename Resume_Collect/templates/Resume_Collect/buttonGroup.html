@@ -1,0 +1,51 @@
+{% load static %}
+<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+    <div class="btn-group" role="group">
+    </div>
+    <form action="" method="POST" id="OpeningForm">
+      {% csrf_token %}
+      {% for field in openingform %}
+      <div class="field-wrapper">
+          {{ field }}
+          {% if field.errors %}
+          {% for error in field.errors %}
+            {% if error == 'Job Opening already exists.' %}
+            <div id="alert" class="alert alert-danger">{{ field.errors.0 }}</div>
+            {% endif %}
+            {% endfor %}
+        {% endif %}
+      </div>
+  {% endfor %}
+      <input class="btn btn-secondary" type="submit" value="Create Job Opening" style="width: max(13vh, 97px); font-weight:400; font-size: max(2vh, 12px);" name="opening">
+    </div>
+    </form>
+<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+    <form action="" method="POST" enctype="multipart/form-data" id="CandidateForm">
+      {% csrf_token %}
+      {% for field in candidateform %}
+      <div class="field-wrapper">
+          {{ field }}
+      </div>
+  {% endfor %}
+      <input class="btn btn-secondary" type="submit" value="Add Candidate" style="width: max(13vh, 97px); font-weight:400; font-size: max(2vh, 12px);" name="candidate">
+  </form>
+  </div>
+<!--
+    <button type="button" class="btn btn-secondary">Button</button>
+    <div class="search_btn">
+        <form class="form-inline my-2 my-lg-0">
+            <input id='search_input' class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button id="search_btn" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div> -->
+    <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+    <form action="" method="POST" id="SearchForm">
+        {% csrf_token %}
+        {% for field in searchform %}
+        <div class="field-wrapper">
+            {{ field }}
+        </div>
+    {% endfor %}
+        <input class="btn btn-secondary" type="submit" value="Search" style="width: max(13vh, 97px); font-weight:400; font-size: max(2vh, 12px);" name="search">
+    </form>
+    </div>

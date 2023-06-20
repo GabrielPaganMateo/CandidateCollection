@@ -1,0 +1,22 @@
+workbench {
+    display: flex;
+    align-items: start;
+    justify-content: flex-end;
+    margin-bottom: 100px;
+}
+
+side {
+    position: fixed;
+    left: 10%;
+    z-index: 2;
+}
+
+main {
+    position: relative;
+    right: 10%;
+    z-index: 0;
+
+    margin-left: 15vh;
+    min-width: 300px;
+    max-width: 65%;
+}

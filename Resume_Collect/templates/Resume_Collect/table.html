@@ -1,0 +1,66 @@
+{% load static %}
+{% if candidates %}
+<div class="card">
+    {% if query %}
+        <div id="filter">Candidates filtered by: "{{ query }}"</div>
+    {% endif %}
+    <div id="folder" class="table">
+        <table id='table' class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col" style="text-align: center;">&nbsp;&nbsp;{{ total_candidates }}</th>
+                <th scope="col" style="text-align: center;">Name</th>
+                <th scope="col" style="text-align: center;">Email</th>
+                <th scope="col" style="text-align: center;">Phone</th>
+                <th scope="col" style="text-align: center;">Education</th>
+                <!--<th scope="col" style="text-align: center;">Experience</th>-->
+                <th scope="col" style="text-align: center;">&nbsp;&nbsp;Download&nbsp;&nbsp;</th>
+                <th scope="col" style="text-align: center;">&nbsp;&nbsp;Delete&nbsp;&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for candidate in candidates %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        {% if candidate.name %}
+                        <td>{{ candidate.name }}</td>
+                    {% else %}
+                        <td style="text-decoration: line-through;">&nbsp;</td>
+                    {% endif %}
+                    {% if candidate.email %}
+                        <td id="email">{{ candidate.email }}</td>
+                    {% else %}
+                        <td style="text-decoration: line-through;">&nbsp;</td>
+                    {% endif %}
+                    {% if candidate.phone %}
+                        <td>{{ candidate.phone }}</td>
+                    {% else %}
+                        <td style="text-decoration: line-through;">&nbsp;</td>
+                    {% endif %}
+                    {% if candidate.education %}
+                        <td>{{ candidate.education }}</td>
+                    {% else %}
+                        <td style="text-decoration: line-through;">&nbsp;</td>
+                    {% endif %}
+                    <!--{% if candidate.experience %}
+                        <td>{{ candidate.experience }}</td>
+                    {% else %}
+                        <td style="text-decoration: line-through;">&nbsp;</td>
+                    {% endif %}-->
+                        <td><a class="btn btn-sm btn-info" href="{{ candidate.resume.url }}" style="background-color: #38b6ff !important;"><img id='download' style="width: max(3vh, 12px);" src="{% static 'images/download.svg' %}"></a></td>
+                        <td>
+                            <form method="POST" action="">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-sm btn-danger" name="delete_candidate" value="{{candidate.id}}">
+                                    <img id='trash' style="width: max(2.5vh, 12px);" src="{% static 'images/delete.svg' %}">
+                                </button>
+                            </form>
+                        </td>
+                        
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+  </div>
+  {% endif %}

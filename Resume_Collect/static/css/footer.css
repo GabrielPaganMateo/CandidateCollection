@@ -1,0 +1,9 @@
+footer {
+    position: fixed;
+    background: linear-gradient(270deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, #38b6ff 75%);
+    min-height: 5vh;
+    width: 100%;
+    z-index: 4;
+    bottom: 0%;
+    margin-top: 0%;
+}

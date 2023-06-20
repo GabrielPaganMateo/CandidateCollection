@@ -1,0 +1,184 @@
+side {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*background: linear-gradient(315deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, #38b6ff 75%);*/
+    /*box-shadow: rgba(0, 0, 0, 0.5) 25px 40px 25px;*/
+    border-radius: .50rem;
+}
+
+.btn-group-vertical {
+    min-width: fit-content;
+    min-height: 50px;
+    width: 100%;
+    gap: max(2vh, 15px);
+    border-radius: .50rem;
+    margin: 15px;
+    align-items: center !important;
+    background: linear-gradient(315deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, #38b6ff 75%);
+    box-shadow: rgba(0, 0, 0, 0.5) 5px 15px 25px;
+
+}
+
+.btn-group-vertical button {
+    font-size: max(2vh, 12px);
+}
+
+.btn-group-vertical .btn {
+    width: max(13vh, 97px);
+    min-width: fit-content;
+    align-items: center;
+}
+
+.dropdown-menu {
+    width: max(13vh, 170px);
+    text-align: center;
+}
+
+.dropdown-item a {
+    font-size: max(2vh, 12px);
+}
+
+.btn-group-vertical>.btn:not(:last-child):not(.dropdown-toggle) {
+    border-bottom-right-radius: .3rem;
+    border-bottom-left-radius: .3rem;
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+}
+
+.btn-secondary {
+    color: #fff;
+    background: transparent;
+    border: 3px solid #ffe538;
+}
+
+.btn-group-vertical .btn-secondary:hover {
+    color: #38b6ff;
+    background-color: #ffe538;
+    border-color: #fff;
+}
+
+.btn-secondary:not(:disabled):not(.disabled):active {
+    color: #38b6ff;
+    background-color: #ffe538;
+    border-color: #fff;
+    width: max(11vh, 50px) !important;
+
+}
+
+.btn-outline-success:not(:disabled):not(.disabled).active,
+.btn-outline-success:not(:disabled):not(.disabled):active,
+.show>.btn-outline-success.dropdown-toggle {
+    color: #38b6ff;
+    background-color: #ffe538;
+    border: 2px solid #fff;
+}
+
+#search_input {
+    margin-right: 0 !important;
+    width: max(13vh, 97px);
+    height: max(3vh, 36px);
+    font-size: max(1vh, 12px);
+}
+
+.btn-group-vertical .btn-outline-success:hover {
+    background-color: #ffe538;
+    border-color: #fff;
+}
+
+.btn-group-vertical .btn-outline-success {
+    color: #fff;
+    border: 3px solid #ffe538;
+}
+
+.show>.btn-secondary.dropdown-toggle {
+    color: #38b6ff;
+    background-color: #ffe538;
+    border-color: #fff;
+}
+
+#btnGroupVerticalDrop1 {
+    border-bottom-right-radius: .3rem;
+    border-bottom-left-radius: .3rem;
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+}
+
+.search_btn {
+    width: max(13vh, 97px);
+}
+
+#search_btn {
+    width: max(13vh, 97px);
+}
+
+#OpeningForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: max(2vh, 15px);
+    margin-bottom: 20px;
+}
+
+#CandidateForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: max(2vh, 15px);
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#SearchForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: max(2vh, 15px);
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#id_resumes {
+    font-size: max(2vh, 12px);
+    width: max(28vh, 260px);
+    color:#fff;
+}
+
+#id_name {
+    width: max(28vh, 210px);
+    font-size: max(2vh, 12px);
+    border-bottom-right-radius: .3rem;
+    border-bottom-left-radius: .3rem;
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+}
+
+#id_opening {
+    width: max(28vh, 210px);
+    font-size: max(2vh, 12px);
+}
+
+select {
+    width: max(13vh, 210px)
+}
+
+#alert {
+    padding: 0 0.25rem;
+    margin-bottom: 0;
+}
+
+#id_query {
+    width: max(28vh, 210px);
+    font-size: max(2vh, 12px);
+    border-bottom-right-radius: .3rem;
+    border-bottom-left-radius: .3rem;
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+}
+
+#id_education {
+    width: max(28vh, 210px);
+    font-size: max(2vh, 12px);
+}

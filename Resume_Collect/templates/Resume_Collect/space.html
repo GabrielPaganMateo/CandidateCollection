@@ -1,0 +1,20 @@
+{% load static %}
+{% if opening_name %}
+<space>
+    <div id="empytSpace"></div>
+    <div>{{ opening_name }}</div>
+    {% if opening_name != 'All Candidates' %}
+        <form method="POST" action="">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-sm" name="delete_opening" value="{{opening}}" style="background: transparent;" title="WARNING: Delete job opening & related candidates">
+                <img id='trash' style="width: max(2.5vh, 12px);" src="{% static 'images/delete.svg' %}">
+            </button>
+        </form>
+    {% else %}
+        <div></div>
+    {% endif %}
+
+</space>
+{% else %}
+<noneSpace></noneSpace>
+{% endif %}
