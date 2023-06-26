@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-g(#_+23!q*bf2%gg(d04waaovkfg5&_09^i_*m_^5^wrstawbv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['production.eba-pvp6rnxi.us-west-2.elasticbeanstalk.com', 'staging.eba-pvp6rnxi.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -170,4 +170,4 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 """Uncomment for static file storage in S3, (Remember to add every static directory to S3, css and images, then erase them from app)"""
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'

@@ -9,6 +9,9 @@ from .models import *
 from .forms import *
 from .utils import *
 
+def Landing(request):
+    return render(request, 'Resume_Collect/Landing.html')
+
 @unauthenticated_user
 def Register(request):
     form = RegisterUserForm()
@@ -126,7 +129,7 @@ def Collection(request):
             education = request.session.get('education', '')
             candidateform = CandidateForm(initial={'opening': current_opening_id}, user=active_user, files=None)
             searchform = SearchForm(initial={'opening': current_opening_id, 'query': query, 'education': education}, user=active_user)
-            print(query)
+
 
 
         if 'delete_opening' in request.POST:
@@ -151,7 +154,6 @@ def Collection(request):
 
     if query:
         keywords = [word.strip() for word in query.split('&')]
-        print(query)
         for keyword in keywords:
             candidates = candidates.filter(text_list__icontains=keyword)
         request.session['query_str'] = query

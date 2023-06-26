@@ -1,0 +1,10 @@
+.banner {
+    background: rgba(255,235,59,1);
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    color: #0e1a86;
+    display: flex;
+    justify-content: center;
+    border: 2px solid rgba(255,152,0,1);
+}

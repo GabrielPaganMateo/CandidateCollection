@@ -4,7 +4,6 @@
     <a class="navbar-brand"><img id='logo' src="{% static 'images/logo.png' %}"></a>
     <div id="username">{{request.user}}<!--| Username |--></div>
     <div id="logdiv">
-        <!-- Limit the number of characters that can be used for usernames to 21 or less-->
         <form id='form' class="form-inline">
             <div><a href="{% url 'Exit' %}"><button id='log' class="btn btn-outline-success btn-lg my-2 my-sm-0" type="button">Log Out</button></a></div>
         </form>

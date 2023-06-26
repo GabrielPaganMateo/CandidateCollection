@@ -1,0 +1,43 @@
+https://pythoncircle.com/post/697/hosting-django-app-for-free-on-amazon-aws-ec2-with-gunicorn-and-nginx/
+https://dev.to/awscommunity-asean/create-and-deploy-python-django-application-in-aws-ec2-instance-4hbm
+You may need to update certain packages for the website to work.
+
+User
+I have one EC2 instance, will auto scaling recreate the same E2 instance ?
+ChatGPT
+2 / 2
+
+In Amazon Web Services (AWS), the Auto Scaling feature doesn't directly clone your existing EC2 instance. Instead, it creates new instances based on a template called a Launch Configuration or a Launch Template. These templates specify the AMI (Amazon Machine Image), the instance type, security groups, and other settings for the instances.
+
+So, to leverage Auto Scaling, you should create a Launch Configuration or Launch Template that matches the setup of your existing EC2 instance. That way, when Auto Scaling creates new instances, they will have the same configuration.
+
+Here's a brief step-by-step guide:
+
+    First, create an AMI of your existing EC2 instance if you don't have one. The AMI should include any software, settings, and data that should be on every instance.
+
+    Then, create an Auto Scaling group. When you do this, you'll be asked to specify a Launch Configuration or Launch Template.
+
+    In your Launch Configuration or Launch Template, specify the AMI you created earlier. Also, specify the instance type, security groups, and other settings to match your existing instance.
+
+    Also define scaling policies for your Auto Scaling group. These policies determine when Auto Scaling should launch or terminate instances.
+
+    Once your Auto Scaling group is active, it will start launching instances based on your Launch Configuration or Launch Template, in response to the conditions defined in your scaling policies.
+
+Please note that the new instances created by Auto Scaling will be fresh instances. They won't have any data that was generated on your original instance after you created the AMI. If your application stores data that needs to persist across instances, consider using an AWS service like RDS for your database, and S3 for files.
+User
+What if I want them to be running the same app ?
+ChatGPT
+
+The instances created by Auto Scaling will all run the same application if you've correctly set up your AMI (Amazon Machine Image) and your Launch Configuration or Launch Template.
+
+Here's the detailed explanation:
+
+    Create an AMI of your existing EC2 instance: When you create an AMI of your existing EC2 instance, AWS takes a "snapshot" of the instance's current state. This includes the operating system, any software installed on the instance (such as your application and its dependencies), and any data on the instance's EBS volumes. Therefore, if your application is already running on your existing instance when you create the AMI, then that application is included in the AMI.
+
+    Use the AMI in your Launch Configuration or Launch Template: When you create a Launch Configuration or Launch Template for your Auto Scaling group, you specify an AMI to use for new instances. If you specify the AMI you created earlier, then every new instance will start with an exact copy of the software and data that was on your original instance at the moment you created the AMI.
+
+    Auto Scaling creates instances: When your Auto Scaling group creates new instances, it uses the Launch Configuration or Launch Template. This means it launches instances using the AMI you specified. These instances will include your application, because it was included in the AMI.
+
+However, it's important to note that the AMI is a static snapshot. It doesn't get updated when you make changes to your original instance. If you update your application on your original instance, you'll need to create a new AMI and update your Launch Configuration or Launch Template to use the new AMI. Then, future instances launched by Auto Scaling will use the updated application.
+
+Another thing to consider is that your instances created by auto-scaling will need some way to receive the new application updates, especially when your original EC2 instance isn't running or is terminated. This is where CI/CD pipeline comes in handy.
