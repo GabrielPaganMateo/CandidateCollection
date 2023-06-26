@@ -10,6 +10,7 @@ from .forms import *
 from .utils import *
 
 def Landing(request):
+
     return render(request, 'Resume_Collect/Landing.html')
 
 @unauthenticated_user
@@ -19,6 +20,13 @@ def Register(request):
         form = RegisterUserForm(request.POST)
         if form.is_valid():
             form.save()
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password2')
+            user = authenticate(request, username=username, password=password)
+            print
+            if user is not None:
+                login(request, user)
+                return redirect('Collection')
             return redirect('Collection')
 
     context = {'form': form}
@@ -43,6 +51,7 @@ def Access(request):
     return render(request, 'Resume_Collect/Access.html', context)
 
 @login_required(login_url='Access')
+@login_required(login_url='Register')
 def Collection(request):
     active_user = request.user
     if 'opening' not in request.POST:

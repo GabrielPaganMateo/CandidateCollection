@@ -41,7 +41,7 @@ features {
 
     .card-body {
         border-top: 2px solid #0e1a86;
-        border-right: 2px solid #0e1a86;
+        border-left: 2px solid #0e1a86;
 
     }
 

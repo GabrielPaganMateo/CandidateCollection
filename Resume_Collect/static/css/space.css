@@ -42,7 +42,9 @@ space div {
     font-size: max(5vh, 24px);
 }
 
-#emptySpace {
-
+filler {
+    display: flex;
+    height: 3.5vh;
+    width: 100%;
 }
 

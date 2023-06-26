@@ -12,7 +12,7 @@
 header {
     height: 15vh;
 }
-@media (max-width:700px) {
+@media (max-width:900px) {
     header {
         margin-bottom: 75px;
     }
@@ -51,7 +51,6 @@ a.navbar-brand {
 .navbar-custom {
     background: #0e1a86;
     height: fit-content;
-
 }
 
 .navbar-custom .btn-outline-success {

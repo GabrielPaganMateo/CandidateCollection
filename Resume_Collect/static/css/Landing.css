@@ -273,3 +273,6 @@ a.ml-2:hover {
     text-decoration-color: #fff !important; 
 }
 
+.error-message {
+    font-size: xx-large;
+}

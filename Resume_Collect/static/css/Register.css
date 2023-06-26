@@ -270,4 +270,10 @@ a.ml-2:hover {
     text-decoration-color: #fff !important; 
 }
 
+#errors {
+    margin-bottom: 25px;
+}
 
+footer {
+    margin-top: 175px;
+}
