@@ -43,3 +43,9 @@ main {
     max-width: 40vh;
 }
 
+@media screen and (max-width: 900px) {
+    .responsive_col {
+display: none;
+}
+}
+

@@ -180,7 +180,6 @@ def Collection(request):
         searchform = SearchForm(initial={'opening': opening_id}, user=active_user)
 
     total_candidates = candidates.count()
-
     context = {
         'candidates': candidates, 
         'opening': opening,

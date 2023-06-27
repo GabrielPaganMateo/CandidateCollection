@@ -10,9 +10,9 @@
             <tr>
                 <th scope="col" style="text-align: center;">&nbsp;&nbsp;{{ total_candidates }}</th>
                 <th scope="col" style="text-align: center;">Name</th>
-                <th scope="col" style="text-align: center;">Email</th>
-                <th scope="col" style="text-align: center;">Phone</th>
-                <th scope="col" style="text-align: center;">Education</th>
+                <th class='responsive_col' scope="col" style="text-align: center;">Email</th>
+                <th class='responsive_col' scope="col" style="text-align: center;">Phone</th>
+                <th class='responsive_col' scope="col" style="text-align: center;">Education</th>
                 <!--<th scope="col" style="text-align: center;">Experience</th>-->
                 <th scope="col" style="text-align: center;">&nbsp;&nbsp;Download&nbsp;&nbsp;</th>
                 <th scope="col" style="text-align: center;">&nbsp;&nbsp;Delete&nbsp;&nbsp;</th>
@@ -28,19 +28,19 @@
                         <td style="text-decoration: line-through;">&nbsp;</td>
                     {% endif %}
                     {% if candidate.email %}
-                        <td id="email">{{ candidate.email }}</td>
+                        <td class='responsive_col' id="email">{{ candidate.email }}</td>
                     {% else %}
-                        <td style="text-decoration: line-through;">&nbsp;</td>
+                        <td class='responsive_col' style="text-decoration: line-through;">&nbsp;</td>
                     {% endif %}
                     {% if candidate.phone %}
-                        <td>{{ candidate.phone }}</td>
+                        <td class='responsive_col'>{{ candidate.phone }}</td>
                     {% else %}
-                        <td style="text-decoration: line-through;">&nbsp;</td>
+                        <td class='responsive_col' style="text-decoration: line-through;">&nbsp;</td>
                     {% endif %}
                     {% if candidate.education %}
-                        <td>{{ candidate.education }}</td>
+                        <td class='responsive_col'>{{ candidate.education }}</td>
                     {% else %}
-                        <td style="text-decoration: line-through;">&nbsp;</td>
+                        <td class='responsive_col' style="text-decoration: line-through;">&nbsp;</td>
                     {% endif %}
                     <!--{% if candidate.experience %}
                         <td>{{ candidate.experience }}</td>
