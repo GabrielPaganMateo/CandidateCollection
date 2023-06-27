@@ -44,7 +44,7 @@
     <body>
         <header style="margin-bottom: px">
             <nav class="navbar navbar-dark navbar-custom justify-content-between">
-                <a class="navbar-brand"><img id='logo' src="{% static 'images/logo.png' %}"></a>
+                <a class="navbar-brand" href="{% url 'Landing' %}"><img id='logo' src="{% static 'images/logo.png' %}"></a>
                 <div id="navigationbtn">
                     <form id='form' class="form-inline">
                         <div><a href="{% url 'Landing' %}"><button id='log' class="btn btn-outline-success btn-lg my-2 my-sm-0" type="button">Home</button></a></div>
@@ -53,19 +53,13 @@
                         <div><a href="#about"><button id='log' class="btn btn-outline-success btn-lg my-2 my-sm-0" type="button">About</button></a></div>
                     </form>
                     <form id='form' class="form-inline">
-                        <div><a href="#features"><button id='log' class="btn btn-outline-success btn-lg my-2 my-sm-0" type="button">&nbsp;Features</button></a></div>
+                        <div><a href="#features"><button id='log' class="btn btn-outline-success btn-lg my-2 my-sm-0 feature" type="button">&nbsp;Features</button></a></div>
                     </form>
                 </div>
             </nav>
         </header>
         <intro>
-            <div class="col-md-3" style="display: flex; height: auto; color: #fff;     background: #0e1a86;
-            border: 4px solid rgba(127,127,127,1); border-radius: 0.5rem; min-width: min-content;">
-                <div class="card-body" style="display: flex; flex-direction: column; border-bottom: none;">
-                  <h1 class="card-title">Welcome to <span>Candidate Collection!</span> </h1>
-                  <p class="card-text"><h5>Recruit right! Find the ideal candidate for your jobs. Collect their resumes, view their contact information, & match by skill.</h5></p>
-                  {% include 'Resume_Collect/start.html' %}
-                </div>
+        {% include 'Resume_Collect/UserRegister.html' %}
               </div>
               <div class="col-md-4" style="display: flex;justify-content: center; max-width: fit-content;">
                 <img src="../../static/images/background.png" class="img-fluid rounded-start" alt="...">
