@@ -1,0 +1,5 @@
+# Build the Docker image
+docker build -t mydjangoapp .
+
+# Run the Django app
+docker run -it -p 8000:8000 mydjangoapp
