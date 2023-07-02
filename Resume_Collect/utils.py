@@ -2,6 +2,13 @@ from pdfminer.high_level import extract_text
 import spacy
 import re
 from word2number import w2n
+import requests
+
+"""Function to extract pdf_resume_file from url & attach to email"""
+def attach_url_to_email(email, url):
+    response = requests.get(url)
+    file_name = url.split('/')[-1].split('?')[0] # extracts the file name from the URL
+    email.attach(file_name, response.content, 'application/pdf') # assuming all files are PDFs
 
 """Functions to extract text of docs"""
 def extract_text_from_pdf(pdf_path):

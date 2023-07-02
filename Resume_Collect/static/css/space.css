@@ -3,6 +3,7 @@ nonespace {
     height: 3.5vh;
     width: 100%;
 }
+
 space {
     display: flex;
     height: min-content;
@@ -19,7 +20,8 @@ space {
     justify-content: space-between;
     align-items: center;
     line-height: 1 !important;
-    
+    min-width: min-content;
+    flex-wrap: wrap;
 }
 
 /* Text pop-in animation */
@@ -49,3 +51,40 @@ filler {
     width: 100%;
 }
 
+#id_email {
+    width: max(28vh, 210px);
+font-size: max(2vh, 12px);
+border-bottom-right-radius: .3rem;
+border-bottom-left-radius: .3rem;
+border-top-left-radius: .3rem;
+border-top-right-radius: .3rem;
+}
+
+#share_btn {
+    display: inline-block;
+    box-sizing: border-box;
+    min-height: 53px;
+    min-width: fit-content;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: distribute;
+    position: relative;
+    cursor: pointer;
+    background: linear-gradient(135deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, #38b6ff 75%);
+    border: 3px solid #fff;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    text-shadow: 1px 1px 1px black, 0 0 1px black, 0 0 1px darkblue;
+    border-radius: .25rem;
+    width: max(13vh, 97px);
+font-weight: 400;
+font-size: max(5vh, 24px);
+  }
+
+  #share_btn:hover {
+    background: linear-gradient(315deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, #38b6ff 75%);
+    border-color: #ffe538;
+  }

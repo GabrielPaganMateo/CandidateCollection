@@ -77,3 +77,10 @@ class RegisterUserForm(UserCreationForm):
         self.fields['email'].widget.attrs['placeholder'] = 'Enter Email'
         self.fields['password1'].widget.attrs['placeholder'] = 'Enter Password'
         self.fields['password2'].widget.attrs['placeholder'] = 'Confirm Password'
+
+class EmailForm(forms.Form):
+        email = forms.CharField(
+        required=True,
+        widget=forms.TextInput(attrs={'placeholder': 'Send to: example@mail.com'}),
+        label=''
+    )

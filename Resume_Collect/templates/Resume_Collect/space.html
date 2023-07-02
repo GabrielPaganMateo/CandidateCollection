@@ -1,7 +1,7 @@
 {% load static %}
 {% if opening_name %}
 <space>
-    <div id="empytSpace"></div>
+    {% include 'Resume_Collect/share.html' %}
     <div>{{ opening_name }}</div>
     {% if opening_name != 'All Candidates' %}
         <form method="POST" action="">

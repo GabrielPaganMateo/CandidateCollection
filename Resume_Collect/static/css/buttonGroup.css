@@ -52,16 +52,17 @@ side {
     color: #fff;
     background: transparent;
     border: 3px solid #ffe538;
+    text-shadow: 1px 1px 1px black, 0 0 1px black, 0 0 1px darkblue;
 }
 
 .btn-group-vertical .btn-secondary:hover {
-    color: #38b6ff;
+    color: #fff;
     background-color: #ffe538;
     border-color: #fff;
 }
 
 .btn-secondary:not(:disabled):not(.disabled):active {
-    color: #38b6ff;
+    color: #fff;
     background-color: #ffe538;
     border-color: #fff;
     width: max(11vh, 50px) !important;
@@ -71,7 +72,7 @@ side {
 .btn-outline-success:not(:disabled):not(.disabled).active,
 .btn-outline-success:not(:disabled):not(.disabled):active,
 .show>.btn-outline-success.dropdown-toggle {
-    color: #38b6ff;
+    color: #fff;
     background-color: #ffe538;
     border: 2px solid #fff;
 }
