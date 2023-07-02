@@ -58,6 +58,7 @@ border-bottom-right-radius: .3rem;
 border-bottom-left-radius: .3rem;
 border-top-left-radius: .3rem;
 border-top-right-radius: .3rem;
+align-self: center;
 }
 
 #share_btn {
@@ -71,20 +72,21 @@ border-top-right-radius: .3rem;
     -ms-flex-pack: distribute;
     position: relative;
     cursor: pointer;
-    background: linear-gradient(135deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, #38b6ff 75%);
-    border: 3px solid #fff;
+    background: linear-gradient(135deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, #38b6ff 75%);;
+    border: 3px solid #ffe538;
     color: #FFFFFF;
     font-size: 18px;
     font-weight: 600;
     font-family: 'DM Sans', sans-serif;
     text-shadow: 1px 1px 1px black, 0 0 1px black, 0 0 1px darkblue;
-    border-radius: .25rem;
+    border-radius: .75rem;
     width: max(13vh, 97px);
 font-weight: 400;
 font-size: max(5vh, 24px);
+box-shadow: inset 0 0 2.5px #000000;
   }
 
   #share_btn:hover {
-    background: linear-gradient(315deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, #38b6ff 75%);
-    border-color: #ffe538;
+    background: linear-gradient(315deg, rgba(255,235,59,1) 0%, rgba(255,193,7,1) 35%, rgba(255,152,0,1) 100%);
+    box-shadow: inset 0 0 5px #000000;
   }
