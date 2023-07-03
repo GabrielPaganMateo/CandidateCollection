@@ -9,9 +9,21 @@ function replaceDivWithLoader() {
 }
 
 window.onload = function() {
-    var loadInputs = document.getElementsByClassName("load");
+    var forms = document.getElementsByTagName("form");
 
-    for(var i = 0; i < loadInputs.length; i++) {
-        loadInputs[i].addEventListener('click', replaceDivWithLoader);
+    for (var i = 0; i < forms.length; i++) {
+        forms[i].addEventListener('submit', function(event) {
+    
+            if (!this.checkValidity()) {
+                // If the form is invalid, stop the form submission
+                event.preventDefault();
+                // Maybe notify the user that there are invalid inputs
+            } else {
+                // All the inputs are valid
+                // Here you can call the function to replace the div with the loader
+                replaceDivWithLoader();
+                // Then let the form submit normally
+            }
+        });
     }
 }

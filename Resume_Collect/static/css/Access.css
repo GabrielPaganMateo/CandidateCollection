@@ -9,6 +9,14 @@ register {
     border-radius: .50rem;
 }
 
+body {
+    background-image: url("../images/background3.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 .btn-group-vertical {
     min-width: fit-content;
     min-height: 50px;
@@ -230,6 +238,7 @@ input {
     background-color: #ffe538 !important;
     border-color: #fff !important;
     color: #fff !important;
+    text-shadow: none;
 }
 .login_btn:focus {
     box-shadow: none !important;

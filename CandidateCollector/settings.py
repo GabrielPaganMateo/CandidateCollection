@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-g(#_+23!q*bf2%gg(d04waaovkfg5&_09^i_*m_^5^wrstawbv
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'candidatecollection@gmail.com'
 EMAIL_HOST_PASSWORD = 'lkkyjooeqnniggyo'
@@ -177,4 +177,4 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 """Uncomment for static file storage in S3, (Remember to add every static directory to S3, css and images, then erase them from app)"""
-#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
