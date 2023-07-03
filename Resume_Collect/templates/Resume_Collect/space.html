@@ -6,7 +6,7 @@
     {% if opening_name != 'All Candidates' %}
         <form method="POST" action="">
             {% csrf_token %}
-            <button type="submit" class="btn btn-sm" name="delete_opening" value="{{opening}}" style="background: transparent;" title="WARNING: Delete job opening & related candidates">
+            <button type="submit" class="btn btn-sm load" name="delete_opening" value="{{opening}}" style="background: transparent;" title="WARNING: Delete job opening & related candidates">
                 <img id='trash' style="width: max(2.5vh, 12px);" src="{% static 'images/delete.svg' %}">
             </button>
         </form>

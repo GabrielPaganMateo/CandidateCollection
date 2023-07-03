@@ -47,11 +47,11 @@
                     {% else %}
                         <td style="text-decoration: line-through;">&nbsp;</td>
                     {% endif %}-->
-                        <td><a class="btn btn-sm btn-info" href="{{ candidate.resume.url }}" style="background-color: #38b6ff !important;"><img id='download' style="width: max(3vh, 12px);" src="{% static 'images/download.svg' %}"></a></td>
+                        <td><a class="btn btn-sm btn-info" target="_blank" href="{{ candidate.resume.url }}" style="background-color: #38b6ff !important;"><img id='download' style="width: max(3vh, 12px);" src="{% static 'images/download.svg' %}"></a></td>
                         <td>
                             <form method="POST" action="">
                                 {% csrf_token %}
-                                <button type="submit" class="btn btn-sm btn-danger" name="delete_candidate" value="{{candidate.id}}">
+                                <button type="submit" class="btn btn-sm btn-danger load" name="delete_candidate" value="{{candidate.id}}">
                                     <img id='trash' style="width: max(2.5vh, 12px);" src="{% static 'images/delete.svg' %}">
                                 </button>
                             </form>

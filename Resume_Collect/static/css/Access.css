@@ -23,6 +23,7 @@ register {
 
 .btn-group-vertical button {
     font-size: max(2vh, 12px);
+    text-shadow: 1px 1px 1px black, 0 0 1px black, 0 0 1px darkblue;
 }
 
 .btn-group-vertical .btn {
@@ -216,18 +217,19 @@ input {
     color: #fff;
     margin-bottom: 0 !important;
     font-weight: 400;
-    
+    text-shadow: 1px 1px 1px black, 0 0 1px black, 0 0 1px darkblue;
 }
 .login_btn {
     width: 100%;
     background: transparent !important;
     color: white !important;
     border: 3px solid #ffe538 !important;
+    text-shadow: 1px 1px 1px black, 0 0 1px black, 0 0 1px darkblue;
 }
 .login_btn:hover {
     background-color: #ffe538 !important;
     border-color: #fff !important;
-    color: #38b6ff !important;
+    color: #fff !important;
 }
 .login_btn:focus {
     box-shadow: none !important;

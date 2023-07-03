@@ -12,20 +12,26 @@
         <link rel="stylesheet" type="text/css" href="{% static '/css/buttonGroup.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static '/css/space.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static '/css/footer.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static '/css/loader.css' %}">
+        <script src="{% static 'js/load.js' %}"></script>
     </head>
     <body>
         <header>
             {% include 'Resume_Collect/navbar.html' %}
         </header>
+
+
         {% include 'Resume_Collect/space.html' %}
         <workbench>
             <side>
                 {% include 'Resume_Collect/buttonGroup.html' %}
             </side>
-            <main>
+            {% include 'Resume_Collect/loader.html' %}
+            <main id="replace">
                 {% include 'Resume_Collect/table.html' %}
             </main>
         </workbench>
+
     </body>
     <footer>
     </footer>

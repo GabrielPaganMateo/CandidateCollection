@@ -93,6 +93,7 @@ def Collection(request):
                     searchform = SearchForm(
                         initial={'opening': opening.id}, user=active_user)
                     openingform = OpeningForm(initial={'name': None})
+                    query = None
 
         if 'candidate' in request.POST:
             candidateform = CandidateForm(
@@ -116,6 +117,16 @@ def Collection(request):
                         text_list=candidate['text_list'],
                         user=active_user
                     )
+                try:
+                    current_opening_id = request.session['opening_id']
+                except KeyError as error:
+                    current_opening_id = None
+                query = None
+                education = None
+                candidateform = CandidateForm(
+                initial={'opening': current_opening_id}, user=active_user, files=None)
+                searchform = SearchForm(initial={
+                                    'opening': current_opening_id, 'query': query, 'education': education}, user=active_user)
 
         if 'search' in request.POST:
             searchform = SearchForm(request.POST, user=active_user)
@@ -138,6 +149,7 @@ def Collection(request):
                     searchform = SearchForm(
                         initial={'query': query, 'education': education}, user=active_user)
 
+
         if 'delete_candidate' in request.POST:
             candidate_id = request.POST.get('delete_candidate')
             candidate = get_object_or_404(Candidate, id=candidate_id)
@@ -155,6 +167,7 @@ def Collection(request):
             searchform = SearchForm(initial={
                                     'opening': current_opening_id, 'query': query, 'education': education}, user=active_user)
 
+
         if 'delete_opening' in request.POST:
             opening_id = request.session.get('opening_id')
             if opening_id:
@@ -162,6 +175,8 @@ def Collection(request):
                 opening.delete()
                 request.session['opening_id'] = None
                 request.session['opening_name'] = None
+                query = None
+
         
         if 'share' in request.POST:
             emailform = EmailForm(request.POST)
@@ -214,7 +229,7 @@ def Collection(request):
         keywords = [word.strip() for word in query.split('&')]
         for keyword in keywords:
             candidates = candidates.filter(text_list__icontains=keyword)
-        request.session['query_str'] = query
+        request.session['query'] = query
     else:
         query = None
 
@@ -234,7 +249,7 @@ def Collection(request):
         searchform = SearchForm(
             initial={'opening': opening_id}, user=active_user)
 
-    print(session_candidate_list)
+
     request.session['session_candidates'] = json.dumps(session_candidate_list)
     total_candidates = candidates.count()
     context = {
