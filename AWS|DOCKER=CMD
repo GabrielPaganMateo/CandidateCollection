@@ -1,0 +1,5 @@
+aws ecr-public get-login-password --region us-east-1 | sudo docker login --username AWS --password-stdin public.ecr.aws/m9k0a4o1
+(login)
+sudo docker push public.ecr.aws/m9k0a4o1/candidatecollection:my-django-app
+(push a specific image)                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+https://saturncloud.io/blog/how-to-deploy-django-with-docker-on-amazon-elastic-beanstalk/
