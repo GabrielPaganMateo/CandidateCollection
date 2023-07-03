@@ -1,1 +1,2 @@
 source ~/ResumeStorageENV/bin/activate
+source venv/bin/activate
