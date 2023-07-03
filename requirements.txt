@@ -1,4 +1,5 @@
 asgiref==3.7.2
+backports.zoneinfo==0.2.1
 blis==0.7.9
 boto3==1.26.155
 botocore==1.29.155
@@ -12,6 +13,7 @@ cryptography==41.0.1
 cymem==2.0.7
 Django==4.2.2
 django-storages==1.13.2
+gunicorn==20.1.0
 idna==3.4
 Jinja2==3.1.2
 jmespath==1.0.1
@@ -45,4 +47,4 @@ typing-extensions==4.6.3
 urllib3==1.26.16
 wasabi==1.1.2
 word2number==1.1
-https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0.tar.gz
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0.tar.gzgunicorn

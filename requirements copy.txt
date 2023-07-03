@@ -46,4 +46,6 @@ typing-extensions==4.6.3
 urllib3==1.26.16
 wasabi==1.1.2
 word2number==1.1
+
 https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0.tar.gz
+^^^^^^Only way of installing spacy by requirements.txt file^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
