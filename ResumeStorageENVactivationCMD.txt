@@ -1,2 +1,20 @@
 source ~/ResumeStorageENV/bin/activate
 source venv/bin/activate
+
+server {
+    listen 80;
+    server_name 3.15.253.244;
+
+    # to avoid any error while fetching fevicon
+    location = /favicon.ico { access_log off; log_not_found off; }
+
+    location /static/ {
+        root /home/ubuntu/CandidateCollector;
+    }
+
+    location / {
+        include proxy_params;
+        # communicate via socket file created by Gunicorn
+        proxy_pass http://unix:/home/ubuntu/CandidateCollector/CandidateCollector.sock;
+    }
+}
