@@ -18,3 +18,16 @@ server {
         proxy_pass http://unix:/home/ubuntu/CandidateCollector/CandidateCollector.sock;
     }
 }
+
+[Unit]
+Description=Gunicorn daemon for CandidateCollector
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/CandidateCollector
+ExecStart=/home/ubuntu/CandidateCollector/env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/ubuntu/CandidateCollector/candidatecollector.sock CandidateCollector.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
