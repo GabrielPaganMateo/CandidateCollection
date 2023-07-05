@@ -183,7 +183,7 @@ def Collection(request):
             if emailform.is_valid():
                 receiver_email = emailform.cleaned_data.get('email')
                 name_opening = request.session.get('opening_name')
-                if name_opening == 'All Candidates':
+                if name_opening == None or name_opening == 'All Candidates':
                     title = f'All Candidates'
                     message = f'Attached to this email are the resumes of selected candidates for your consideration. (Sent by {request.user.email})'
                 else:

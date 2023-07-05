@@ -1,0 +1,4 @@
+sudo lsof -i :8000
+kill PID PID PID PID
+cd CandidateCollector
+gunicorn --workers 3 --bind 0.0.0.0:8000 CandidateCollector.wsgi:application
