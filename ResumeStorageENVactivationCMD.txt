@@ -3,19 +3,19 @@ source venv/bin/activate
 
 server {
     listen 80;
-    server_name 3.15.253.244;
+    server_name 18.220.92.122;
 
     # to avoid any error while fetching fevicon
     location = /favicon.ico { access_log off; log_not_found off; }
 
     location /static/ {
-        root /home/ubuntu/CandidateCollector;
+        root /root/CandidateCollector;
     }
 
     location / {
         include proxy_params;
         # communicate via socket file created by Gunicorn
-        proxy_pass http://unix:/home/ubuntu/CandidateCollector/CandidateCollector.sock;
+        proxy_pass http://unix:/root/CandidateCollector/CandidateCollector.sock;
     }
 }
 
@@ -24,10 +24,10 @@ Description=Gunicorn daemon for CandidateCollector
 After=network.target
 
 [Service]
-User=ubuntu
+User=root
 Group=www-data
-WorkingDirectory=/home/ubuntu/CandidateCollector
-ExecStart=/home/ubuntu/CandidateCollector/env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/ubuntu/CandidateCollector/candidatecollector.sock CandidateCollector.wsgi:application
+WorkingDirectory=/root/CandidateCollector
+ExecStart=/root/CandidateCollector/env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/root/CandidateCollector/candidatecollector.sock CandidateCollector.wsgi:application
 
 [Install]
 WantedBy=multi-user.target

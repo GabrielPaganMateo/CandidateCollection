@@ -197,7 +197,6 @@ def Collection(request):
                 )
                 session_candidate_ids = json.loads(
                     request.session.get('session_candidates'))
-                print(session_candidate_ids)
                 candidates_to_email = Candidate.objects.filter(
                     id__in=session_candidate_ids)
                 for each in candidates_to_email:
