@@ -3,6 +3,8 @@
 ## Overview
 Candidate Collection is a web application built for employers and recruiters who are in search of the ideal candidates for their job positions. This platform helps in the storage, organization, and discovery of resumes by job application. The matching process is straightforward - input the desired skills for the role and our system will match you with the most suitable candidates.
 
+![Candidate Collection Dashboard Image](CandidateCollection.png)
+
 ## Key Features
 
 - **Resume Management:** Upload and organize resumes by job application.
