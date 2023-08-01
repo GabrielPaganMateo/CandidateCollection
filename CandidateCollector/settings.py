@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-g(#_+23!q*bf2%gg(d04waaovkfg5&_09^i_*m_^5^wrstawbv
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'candidatecollection@gmail.com'
 EMAIL_HOST_PASSWORD = 'lkkyjooeqnniggyo'
@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'CandidateCollector.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
+"""DATABASES = {
             'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'resumevault',
@@ -91,11 +91,10 @@ DATABASES = {
         'HOST': 'database-1.ckr9gkvmq8f1.us-east-2.rds.amazonaws.com',
         'PORT': '5432',
         }
-    }
+    }"""
 
 
-
-""" local psql database{
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'collection',
@@ -104,7 +103,7 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '5432',
     }
-}"""
+}
 """AWS DB Master username: holberton, password: password, Databasename: resumevault"""
 
 """ Old Database
@@ -148,22 +147,21 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'Resume_Collect', 'static')
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR)
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
+"""
 #S3 Buckets Config
 from dotenv import load_dotenv
 
@@ -176,5 +174,4 @@ AWS_S3_REGION_NAME = 'us-east-2'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-"""Uncomment for static file storage in S3, (Remember to add every static directory to S3, css and images, then erase them from app)"""
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'"""

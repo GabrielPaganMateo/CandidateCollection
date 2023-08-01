@@ -1,0 +1,10 @@
+intro {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 100px;
+    row-gap: 0px;
+    flex-wrap: wrap;
+}

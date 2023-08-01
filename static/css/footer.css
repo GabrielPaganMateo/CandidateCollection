@@ -1,0 +1,10 @@
+footer {
+    position: fixed;
+    background: #0e1a86;
+    min-height: 5vh;
+    max-height: 5vh;
+    width: 100%;
+    z-index: 4;
+    bottom: 0%;
+    margin-top: 0%;
+}

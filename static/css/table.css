@@ -1,0 +1,51 @@
+main {
+    min-height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    width: min-content;
+    height: min-content;
+    background: rgb(236, 236, 236);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+
+#folder {
+    width: min-content;
+    height: min-content;
+    overflow: scroll;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+#table {
+    border-radius: 1%;
+    height: 2vh;
+    width: 2vh;
+}
+
+#table tr, #table th { 
+    align-self: flex-start;
+    border-bottom: 1px solid #dee2e6;
+    font-size: max(2vh, 12px);
+    width: min-content;
+}
+
+#table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+#email {
+    max-width: 40vh;
+}
+
+@media screen and (max-width: 900px) {
+    .responsive_col {
+display: none;
+}
+}
+
